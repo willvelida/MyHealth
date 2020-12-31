@@ -71,7 +71,11 @@ namespace MyHealth.FileWatcher.Activity.Services
 
                 foreach (var activityFilePath in activityFilePaths)
                 {
-                    await _azureStorageHelper.UploadBlobAsync(_blobContainerClient, "/activity/" + activityFilePath, activityFilePath);
+                    var fileName = Path.GetFileNameWithoutExtension(activityFilePath);
+                    var fileExtension = Path.GetExtension(activityFilePath);
+                    var fullFileName = fileName + fileExtension;
+
+                    await _azureStorageHelper.UploadBlobAsync(_blobContainerClient, "activity/" + fullFileName, activityFilePath);
                     File.Delete(activityFilePath);
                 }               
             }
