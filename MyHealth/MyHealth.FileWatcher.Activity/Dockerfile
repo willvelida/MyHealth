@@ -2,6 +2,7 @@
 WORKDIR /app
 
 COPY *.csproj ./
+COPY nuget.config ./
 RUN dotnet restore
 
 FROM base AS final

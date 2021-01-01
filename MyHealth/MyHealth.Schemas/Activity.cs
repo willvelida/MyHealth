@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace MyHealth.Helpers.Models
+namespace MyHealth.Schemas
 {
     public class Activity
     {
