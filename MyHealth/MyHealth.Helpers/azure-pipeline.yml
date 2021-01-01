@@ -37,7 +37,7 @@ steps:
   inputs:
     command: 'pack'
     arguments: '--configuration $(buildConfiguration)'
-    packagesToPack: 'MyHealth.Helpers.csproj'
+    packagesToPack: '$(ProjectPath)'
     nobuild: true
     versioningScheme: 'off'
 
