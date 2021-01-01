@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using mdl = MyHealth.Helpers.Models;
+using mdl = MyHealth.Schemas;
 
 namespace MyHealth.DBSink.Activity.Models
 {

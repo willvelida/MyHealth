@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using MyHealth.DBSink.Activity.Models;
 using System;
 using System.Threading.Tasks;
-using mdl = MyHealth.Helpers.Models;
+using mdl = MyHealth.Schemas;
 
 namespace MyHealth.DBSink.Activity.Repositories
 {

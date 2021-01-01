@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using Azure.Storage.Blobs;
 using CsvHelper;
 using System.Globalization;
-using mdl = MyHealth.Helpers.Models;
+using mdl = MyHealth.Schemas;
 using MyHealth.DBSink.Activity.Models;
 using System.Collections.Generic;
 
