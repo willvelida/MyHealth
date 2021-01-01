@@ -1,13 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 
 namespace MyHealth.Helpers.Models
 {
     public class Activity
     {
-        [JsonProperty("id")]
-        public string ActivityId { get; set; }
-        public DateTime ActivityDate { get; set; }
+        public string ActivityDate { get; set; }
         public int CaloriesBurned { get; set; }
         public int Steps { get; set; }
         public double Distance { get; set; }

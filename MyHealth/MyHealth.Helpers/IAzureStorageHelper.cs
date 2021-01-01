@@ -1,6 +1,7 @@
 ﻿using Azure.Storage.Blobs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,5 +28,13 @@ namespace MyHealth.Helpers
         /// <param name="fileName"></param>
         /// <returns></returns>
         Task UploadBlobAsync(BlobContainerClient containerClient, string blobName, string fileName);
+
+        /// <summary>
+        /// Downloads the content of a specified blob to a stream
+        /// </summary>
+        /// <param name="containerClient"></param>
+        /// <param name="blobName"></param>
+        /// <returns></returns>
+        Task<Stream> DownloadBlobAsync(BlobContainerClient containerClient, string blobName);
     }
 }

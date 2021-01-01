@@ -1,4 +1,5 @@
 ﻿using Azure.Storage.Blobs;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace MyHealth.Helpers
@@ -19,6 +20,16 @@ namespace MyHealth.Helpers
             BlobClient blobClient = containerClient.GetBlobClient(blobName);
 
             await blobClient.UploadAsync(fileName);
+        }
+
+        public async Task<Stream> DownloadBlobAsync(BlobContainerClient containerClient, string blobName)
+        {
+            BlobClient blobClient = containerClient.GetBlobClient(blobName);
+            var stream = new MemoryStream();
+
+            await blobClient.DownloadToAsync(stream);
+
+            return stream;
         }
     }
 }
