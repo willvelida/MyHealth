@@ -9,6 +9,7 @@ pool:
 variables:
   ProjectName: 'MyHealth.Helpers'
   ProjectPath: '**/MyHealth.Helpers.csproj'
+  buildConfiguration: 'Release'
 
 steps:
 - task: UseDotNet@2
