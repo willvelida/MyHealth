@@ -28,7 +28,4 @@ Diagram coming soon.
 
 | Application Name | Link | Build Status |
 | ---------------- | ---- | ------------ |
-| MyHealth.Helpers | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.Helpers) |  |
-
-
-[![Build Status](https://dev.azure.com/williamvelida/MyHealth/_apis/build/status/willvelida.MyHealth?branchName=main)](https://dev.azure.com/williamvelida/MyHealth/_build/latest?definitionId=27&branchName=main)
+| MyHealth.Helpers | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.Helpers) | [![Build Status](https://dev.azure.com/williamvelida/MyHealth/_apis/build/status/willvelida.MyHealth?branchName=main)](https://dev.azure.com/williamvelida/MyHealth/_build/latest?definitionId=27&branchName=main) |
