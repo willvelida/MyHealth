@@ -24,3 +24,8 @@ Diagram coming soon.
 | ---------------- | ---- |
 | MyHealth.DBSink.Activity | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.DBSink.Activity) |
 
+### Custom NuGet Packages
+
+| Application Name | Link | Build Status |
+| ---------------- | ---- | ------------ |
+| MyHealth.Helpers | [Code Link]() | [![Build Status](https://dev.azure.com/williamvelida/MyHealth/_apis/build/status/willvelida.MyHealth?branchName=main)](https://dev.azure.com/williamvelida/MyHealth/_build/latest?definitionId=27&branchName=main) |
