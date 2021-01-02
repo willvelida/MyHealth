@@ -26,17 +26,20 @@ namespace MyHealth.DBSink.Activity.Functions
         private readonly IConfiguration _configuration;
         private readonly IAzureStorageHelper _azureStorageHelper;
         private readonly IActivityRepository _activityRepository;
+        private BlobContainerClient _blobContainerClient;
 
         public ProcessMonthlyActivityFile(
             ILogger<ProcessMonthlyActivityFile> logger,
             IConfiguration configuration,
             IAzureStorageHelper azureStorageHelper,
-            IActivityRepository activityRepository)
+            IActivityRepository activityRepository,
+            BlobContainerClient blobContainerClient)
         {
             _logger = logger;
             _configuration = configuration;
             _azureStorageHelper = azureStorageHelper;
             _activityRepository = activityRepository;
+            _blobContainerClient = blobContainerClient;
         }
 
         [FunctionName(nameof(ProcessMonthlyActivityFile))]
@@ -57,12 +60,9 @@ namespace MyHealth.DBSink.Activity.Functions
 
                 string fileUrl = fileUrlToken.ToString();
                 var receivedBlobName = "activity/" + Path.GetFileName(fileUrl);
-                
-
-                BlobContainerClient blobContainerClient = new BlobContainerClient(_configuration["BlobConnectionString"], _configuration["BlobContainer"]);
-
+               
                 // Download the blob from the url
-                using (var inputStream = await _azureStorageHelper.DownloadBlobAsync(blobContainerClient, receivedBlobName))
+                using (var inputStream = await _azureStorageHelper.DownloadBlobAsync(_blobContainerClient, receivedBlobName))
                 {
                     inputStream.Seek(0, SeekOrigin.Begin);
 

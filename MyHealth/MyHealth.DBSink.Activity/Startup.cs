@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Cosmos;
+﻿using Azure.Storage.Blobs;
+using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,6 +35,7 @@ namespace MyHealth.DBSink.Activity
             };
 
             builder.Services.AddSingleton((s) => new CosmosClient(config["CosmosDBConnectionString"], cosmosClientOptions));
+            builder.Services.AddSingleton((S) => new BlobContainerClient(config["BlobConnectionString"], config["BlobContainer"]));
             builder.Services.AddTransient<IActivityRepository, ActivityRepository>();
             builder.Services.AddTransient<IAzureStorageHelper, AzureStorageHelper>();
         }

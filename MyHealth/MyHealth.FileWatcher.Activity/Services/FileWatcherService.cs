@@ -51,8 +51,6 @@ namespace MyHealth.FileWatcher.Activity.Services
             _pollTimer.Elapsed += new ElapsedEventHandler(PollDirectoryForFileAsync);
             _pollTimer.Interval = 1;
             _pollTimer.Start();
-
-            Console.WriteLine("");
         }
 
         private async void PollDirectoryForFileAsync(object sender, ElapsedEventArgs e)
