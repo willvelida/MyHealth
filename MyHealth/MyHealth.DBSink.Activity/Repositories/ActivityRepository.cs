@@ -1,9 +1,7 @@
 ﻿using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Configuration;
 using MyHealth.DBSink.Activity.Models;
-using System;
 using System.Threading.Tasks;
-using mdl = MyHealth.Schemas;
 
 namespace MyHealth.DBSink.Activity.Repositories
 {
@@ -31,7 +29,7 @@ namespace MyHealth.DBSink.Activity.Repositories
             };
 
             await _container.CreateItemAsync(activity,
-                new PartitionKey(activity.ActivityId),
+                new PartitionKey(activity.DocumentType),
                 itemRequestOptions);
         }
     }

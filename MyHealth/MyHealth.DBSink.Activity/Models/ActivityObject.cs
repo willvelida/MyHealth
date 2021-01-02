@@ -8,5 +8,7 @@ namespace MyHealth.DBSink.Activity.Models
         [JsonProperty("id")]
         public string ActivityId { get; set; }
         public mdl.Activity Activity { get; set; }
+        public string DocumentType { get; set; }
+        public string FileName { get; set; }
     }
 }

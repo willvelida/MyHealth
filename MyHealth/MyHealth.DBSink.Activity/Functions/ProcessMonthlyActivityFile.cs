@@ -2,7 +2,6 @@
 // http://localhost:7071/runtime/webhooks/EventGrid?functionName={functionname}
 using System;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.EventGrid.Models;
 using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 using Microsoft.Extensions.Logging;
@@ -91,7 +90,9 @@ namespace MyHealth.DBSink.Activity.Functions
                                         MinutesFairlyActive = int.Parse(csv.GetField("Minutes Fairly Active"), NumberStyles.AllowThousands),
                                         MinutesVeryActive = int.Parse(csv.GetField("Minutes Very Active"), NumberStyles.AllowThousands),
                                         ActivityCalories = int.Parse(csv.GetField("Activity Calories"), NumberStyles.AllowThousands)
-                                    }
+                                    },
+                                    DocumentType = "Activity",
+                                    FileName = receivedBlobName
                                 };
 
                                 activities.Add(activityObject);
