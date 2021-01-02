@@ -16,13 +16,14 @@ Diagram coming soon.
 
 | Application Name | Link |
 | ---------------- | ---- |
-| MyHealth.FileWatcher.Activity | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.FileWatcher.Activity) |
+| MyHealth.FileWatcher | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.FileWatcher.Activity) |
 
 ### Azure Functions
 
 | Application Name | Link |
 | ---------------- | ---- |
 | MyHealth.DBSink.Activity | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.DBSink.Activity) |
+| MyHealth.DBSink.Sleep | [Code Link](https://github.com/willvelida/MyHealth/tree/main/MyHealth/MyHealth.DBSink.Sleep) |
 
 ### Custom NuGet Packages
 
