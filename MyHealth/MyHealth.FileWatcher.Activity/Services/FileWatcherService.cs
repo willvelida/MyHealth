@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Timers;
 
-namespace MyHealth.FileWatcher.Activity.Services
+namespace MyHealth.FileWatcher.Services
 {
     public class FileWatcherService : IFileWatcherService
     {
@@ -58,23 +58,36 @@ namespace MyHealth.FileWatcher.Activity.Services
             try
             {
                 // Get file from local directory
-                var activityFilePaths = Directory.EnumerateFiles(_configuration["LocalActivityDirectoryPath"]);
+                var onPremFilePaths = Directory.EnumerateFiles(_configuration["LocalActivityDirectoryPath"]);
 
-                if (!activityFilePaths.Any())
+                if (!onPremFilePaths.Any())
                 {
                     _pollTimer.Interval = _secondsBetweenPolls * 1000;
                     _pollTimer.Start();
                     return;
                 }
 
-                foreach (var activityFilePath in activityFilePaths)
+                foreach (var pickedUpFile in onPremFilePaths)
                 {
-                    var fileName = Path.GetFileNameWithoutExtension(activityFilePath);
-                    var fileExtension = Path.GetExtension(activityFilePath);
-                    var fullFileName = fileName + fileExtension;
+                    var fileName = Path.GetFileNameWithoutExtension(pickedUpFile);
+                    var fileExtension = Path.GetExtension(pickedUpFile);
+                    string fullFileName;
+                    // Do we apply REGEX on the file name to specify which blob to send it to?
+                    if (fileName.StartsWith("activity"))
+                    {
+                        fullFileName = "activity/" + fileName + fileExtension;
+                    }
+                    else if (fileName.StartsWith("sleep"))
+                    {
+                        fullFileName = "sleep/" + fileName + fileExtension;
+                    }
+                    else
+                    {
+                        throw new Exception("File has invalid format");
+                    }
 
-                    await _azureStorageHelper.UploadBlobAsync(_blobContainerClient, "activity/" + fullFileName, activityFilePath);
-                    File.Delete(activityFilePath);
+                    await _azureStorageHelper.UploadBlobAsync(_blobContainerClient, fullFileName, pickedUpFile);
+                    File.Delete(pickedUpFile);
                 }               
             }
             catch (Exception ex)

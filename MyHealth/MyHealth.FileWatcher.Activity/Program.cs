@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MyHealth.FileWatcher.Activity.Services;
+using MyHealth.FileWatcher.Services;
 using MyHealth.Helpers;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace MyHealth.FileWatcher.Activity
+namespace MyHealth.FileWatcher
 {
     class Program
     {

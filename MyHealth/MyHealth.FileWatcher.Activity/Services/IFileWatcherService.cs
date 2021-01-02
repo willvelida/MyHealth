@@ -1,4 +1,4 @@
-﻿namespace MyHealth.FileWatcher.Activity.Services
+﻿namespace MyHealth.FileWatcher.Services
 {
     public interface IFileWatcherService
     {

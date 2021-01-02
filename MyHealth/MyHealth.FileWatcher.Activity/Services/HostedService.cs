@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MyHealth.FileWatcher.Activity.Services
+namespace MyHealth.FileWatcher.Services
 {
     public class HostedService : IHostedService
     {
