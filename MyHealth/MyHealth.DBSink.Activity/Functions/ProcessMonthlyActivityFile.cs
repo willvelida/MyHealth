@@ -108,6 +108,7 @@ namespace MyHealth.DBSink.Activity.Functions
             }
             catch (Exception ex)
             {
+                // TODO: If an exception is thrown because of an error to the file, should we delete the file?
                 _logger.LogError($"Exception thrown: {ex.Message} | {ex.InnerException} | {ex.StackTrace}");
                 throw;
             }            

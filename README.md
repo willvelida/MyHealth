@@ -8,7 +8,7 @@ Every month, I extract a csv file from fitbit.com containing my daily activities
 
 This triggers an event to EventGrid, which is then picked up by an Azure Function that processes the data and stores it in Azure Cosmos DB.
 
-Diagram coming soon.
+![](https://miro.medium.com/max/1400/1*A_7EmEi_4XusyP8mtdjfcg.png)
 
 ## Service List
 
