@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.DBSink.Activity", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.Schemas", "MyHealth.Schemas\MyHealth.Schemas.csproj", "{EC7FE409-52C0-48FA-B1DE-4165701E6EBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHealth.DBSink.Sleep", "MyHealth.DBSink.Sleep\MyHealth.DBSink.Sleep.csproj", "{BDDE8223-278A-4195-A767-69588A1C98B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHealth.DBSink.Sleep", "MyHealth.DBSink.Sleep\MyHealth.DBSink.Sleep.csproj", "{BDDE8223-278A-4195-A767-69588A1C98B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHealth.FileValidator", "MyHealth.FileValidator\MyHealth.FileValidator.csproj", "{B49C85D4-DCE3-4B2E-9FE8-08BCF5ACFB5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BDDE8223-278A-4195-A767-69588A1C98B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDDE8223-278A-4195-A767-69588A1C98B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDDE8223-278A-4195-A767-69588A1C98B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49C85D4-DCE3-4B2E-9FE8-08BCF5ACFB5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49C85D4-DCE3-4B2E-9FE8-08BCF5ACFB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49C85D4-DCE3-4B2E-9FE8-08BCF5ACFB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49C85D4-DCE3-4B2E-9FE8-08BCF5ACFB5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
