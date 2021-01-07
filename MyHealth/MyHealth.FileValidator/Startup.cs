@@ -1,8 +1,10 @@
-﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+﻿using Azure.Storage.Blobs;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyHealth.FileValidator;
+using MyHealth.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,6 +29,9 @@ namespace MyHealth.FileValidator
                 .Build();
 
             builder.Services.AddSingleton<IConfiguration>(config);
+            builder.Services.AddSingleton((s) => new BlobContainerClient(config["BlobConnectionString"], config["BlobContainerName"]));
+
+            builder.Services.AddTransient<IAzureStorageHelper, AzureStorageHelper>();
         }
     }
 }
