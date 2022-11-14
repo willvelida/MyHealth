@@ -15,6 +15,9 @@ resource serviceBus 'Microsoft.ServiceBus/namespaces@2022-01-01-preview' = {
   sku: {
     name: 'Basic'
   }
+  properties: {
+    minimumTlsVersion: '1.2'
+  }
   identity: {
    type: 'SystemAssigned' 
   }
