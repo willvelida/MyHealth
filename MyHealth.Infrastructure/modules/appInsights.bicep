@@ -17,7 +17,6 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
   tags: tags
   properties: {
     Application_Type: 'web'
-    ImmediatePurgeDataOn30Days: true
     publicNetworkAccessForIngestion: 'Enabled'
     publicNetworkAccessForQuery: 'Enabled'
     WorkspaceResourceId: logAnalyticsWorkspaceId
